@@ -14,6 +14,8 @@
     <%= f.radio_button :gender, :man %>
     <%= f.label :woman, "♀" %>
     <%= f.radio_button :gender, :woman %>
+    <%= f.label :other %>
+    <%= f.radio_button :gender, :woman %>
 </div>
   
   <div class="field">
@@ -28,10 +30,15 @@
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
-
+  
   <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+    <%= f.label :age %><br />
+    <%= f.text_field :age, autofocus: true%>
+  </div>
+  
+  <div class="field">
+    <%= f.label :type %><br />
+    <%= f.text_field :type, autofocus: true%>
   </div>
 
   <div class="actions">
