@@ -67,3 +67,5 @@ gem 'jquery-rails'
 
 # devise
 gem 'devise', '~> 4.2'
+gem 'devise-i18n'
+gem 'devise-i18n-views'
