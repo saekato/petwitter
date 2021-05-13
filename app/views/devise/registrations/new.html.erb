@@ -4,9 +4,17 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :name, "動物の名前" %><br />
+    <%= f.label :name, "Pet name" %><br />
     <%= f.text_field :name, autofocus: true%>
   </div>
+  
+  <div class="gender">
+    <%= f.label :gender, "Pet gender" %><br />
+    <%= f.label :man, "♂" %>
+    <%= f.radio_button :gender, :man %>
+    <%= f.label :woman, "♀" %>
+    <%= f.radio_button :gender, :woman %>
+</div>
   
   <div class="field">
     <%= f.label :email %><br />
