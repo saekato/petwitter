@@ -11,3 +11,14 @@ footer {
 .bg-home {
     background-color: #FFFFF0;
 }
+
+.navbar-brand {
+  display     : inline-block;
+  font-size   : 160%;
+  font-weight : bold;
+  color       : #ffffff;
+  text-shadow:  2px  2px 10px #777 ,
+               -2px  2px 10px #777 ,
+                2px -2px 10px #777 ,
+               -2px -2px 10px #777;
+}
