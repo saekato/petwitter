@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   validates :name, presence: true
-  enum sex: { man: 0, woman: 1, other: 2}
+  enum gender: { ♂: 0, ♀: 1, other: 2}
 end

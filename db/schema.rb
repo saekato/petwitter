@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_05_13_054202) do
     t.string "name"
     t.integer "gender"
     t.integer "age"
-    t.string "type"
+    t.string "animal_type"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

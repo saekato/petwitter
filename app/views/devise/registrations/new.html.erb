@@ -10,12 +10,12 @@
   
   <div class="gender">
     <%= f.label :gender, "Pet gender" %><br />
-    <%= f.label :man, "♂" %>
-    <%= f.radio_button :gender, :man %>
-    <%= f.label :woman, "♀" %>
-    <%= f.radio_button :gender, :woman %>
+    <%= f.label :♂ %>
+    <%= f.radio_button :gender, :♂ %>
+    <%= f.label :♀ %>
+    <%= f.radio_button :gender, :♀ %>
     <%= f.label :other %>
-    <%= f.radio_button :gender, :woman %>
+    <%= f.radio_button :gender, :other %>
 </div>
   
   <div class="field">
@@ -37,8 +37,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :type, "Pet type 例:いぬ、ねこ※ひらがなで入力してね" %><br />
-    <%= f.text_field :type, autofocus: true%>
+    <%= f.label :animal_type, "Pet type 例:いぬ、ねこ※ひらがなで入力してね" %><br />
+    <%= f.text_field :animal_type, autofocus: true%>
   </div>
 
   <div class="actions">
