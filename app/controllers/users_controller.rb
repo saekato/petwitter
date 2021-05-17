@@ -8,4 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
   end
+  
+  def logged_in_user
+  end
 end
