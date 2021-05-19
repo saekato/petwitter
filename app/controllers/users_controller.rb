@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   before_action :logged_in_user, only: [:index, :edit, :update]
   
   def index
-    @serarch_params = user_search_params
+    @search_params = user_search_params
     @users = User.search(@search_params)
   end
   
