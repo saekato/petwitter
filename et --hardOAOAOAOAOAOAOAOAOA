@@ -1,0 +1,125 @@
+[33mcommit d94ee66c8c1b23b6cf08f8fd96c340e1688ef7fd[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Tue May 18 02:58:53 2021 +0000
+
+    051811:58
+
+[33mcommit 799864761a36036ba02181cb37f8c8c5cdf3a7c1[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Mon May 17 12:38:47 2021 +0000
+
+    add_index
+
+[33mcommit 929bbf2d22a26dfa109b217355299cc8dc2a6c51[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Mon May 17 06:07:09 2021 +0000
+
+    051715:07
+
+[33mcommit 696bf05be4d86300011c7b2d7df879af3eaf93ba[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Mon May 17 05:58:31 2021 +0000
+
+    051714:58
+
+[33mcommit d0c58cffaa57f12ec933800a4bb5b338172f4cb1[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Mon May 17 02:57:52 2021 +0000
+
+    051711:57
+
+[33mcommit 8d608e572221e91e7b60fa82385df09efa037bc1[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Sun May 16 05:37:38 2021 +0000
+
+    051614:37
+
+[33mcommit 7e36522977998b6d50d61275ff6b891015a1231a[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Sun May 16 02:35:42 2021 +0000
+
+    051611:35
+
+[33mcommit f58804e2374f856c5fc98350d5e0499e0eed5927[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Fri May 14 02:13:20 2021 +0000
+
+    before_edit
+
+[33mcommit e8f5432d253b0cfedec4984ed7d08730ff334561[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Fri May 14 01:39:10 2021 +0000
+
+    edit051410:39
+
+[33mcommit 731c26f64c07117dcc68fbced4a6eeb09e532859[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Thu May 13 12:34:47 2021 +0000
+
+    051321:30
+
+[33mcommit 5297e50de7808b1d9f642950897027fecaf8df7d[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Thu May 13 08:18:34 2021 +0000
+
+    finish type,age
+
+[33mcommit 0f0d51a668e3fa00c353ca0d9c3ca6bc514cb89e[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Thu May 13 05:32:57 2021 +0000
+
+    gender
+
+[33mcommit 6ac040db045d2d5940608c921ac3347574f22dc2[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Thu May 13 02:50:59 2021 +0000
+
+    051311:50
+
+[33mcommit 93f06c1820fae6d38044dc3a230ef78e1eee1409[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Thu May 13 02:29:34 2021 +0000
+
+    gem=ja
+
+[33mcommit f00f16f6be854ea68367095fba6ef940cb1d8188[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Thu May 13 02:06:47 2021 +0000
+
+    edit_name
+
+[33mcommit 827595e161da6559ecd56146fee6c940f9ecbf10[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Wed May 12 07:22:21 2021 +0000
+
+    application_controller.rb~
+
+[33mcommit 386d28873ead32ba7dd19fa73a5d0d4108961b23[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Wed May 12 03:40:30 2021 +0000
+
+    addname:migrate
+
+[33mcommit 940cbdf04b47b7baf186539a004cb46798061546[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Tue May 11 06:09:05 2021 +0000
+
+    051115:09
+
+[33mcommit c261836536b04c26df836ed62a709ae0ec8d670a[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Mon May 10 06:29:52 2021 +0000
+
+    051015:29
+
+[33mcommit 633d95dc05c594f1e1ef40319be15a21b122dcd9[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Mon May 10 05:48:00 2021 +0000
+
+    0510/14:47
+
+[33mcommit c5fe3880b7d8e299e014e48acdbabd72f4fc1e1f[m
+Author: EC2 Default User <ec2-user@ip-172-31-47-184.us-west-2.compute.internal>
+Date:   Mon May 10 02:36:25 2021 +0000
+
+    rails new

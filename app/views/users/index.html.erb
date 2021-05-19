@@ -1,4 +1,32 @@
 <% provide(:title, 'All users') %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Users</h1>
+
+<div class="search-form">
+  <%= form_with(scope: :search, url: users_path, method: :get, local: true) do |f| %>
+    <div class="field">
+      <%= f.label(:name, User.human_attribute_name(:name)) %>
+      <%= f.text_field :name, value: @search_params[:name] %>
+    </div>
+
+    <div class="field">
+      <%= f.label(:gender, User.human_attribute_name(:gender)) %>
+      <%= f.collection_radio_buttons(:gender, User.genders, :first, :first) do |r| %>
+        <%= tag.div(class: 'form-check form-check-inline') do %>
+          <%= r.radio_button(checked: r.value == @search_params[:gender], class: 'form-check-input') + f.label(User.human_attribute_name("gender.#{r.text}"), class: 'form-check-label') %>
+        <% end %>
+      <% end %>
+    </div>
+    
+    <div class="actions">
+      <%= f.submit(t('helpers.submit.search')) %>
+    </div>
+  <% end %>
+</div>
+  
+    
 <h1>All users</h1>
 
 <ul class="users">

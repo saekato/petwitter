@@ -72,3 +72,8 @@ gem 'devise-i18n-views'
 gem 'faker', '2.18.0'
 gem 'will_paginate',           '3.3.0'
 gem 'bootstrap-will_paginate', '1.0.0'
+
+group :development do
+  gem 'better_errors'
+  gem 'binding_of_caller'
+end
