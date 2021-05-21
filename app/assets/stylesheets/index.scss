@@ -1,3 +1,6 @@
-.background {
-    background-image: image-url('dog.jpg');
+.test {
+    background-image: image-url("dog.jpg");
+    background-size: cover;
+    background-color:rgba(0,153,255,0.1);
+    background-blend-mode:lighten;
 }
