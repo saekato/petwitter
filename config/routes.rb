@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :articles
   get 'users/show' =>'users#show'
   get 'users', to: 'users#index'
     devise_for :users, controllers: {
