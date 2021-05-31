@@ -6,7 +6,11 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.where("status = 0")
+    # publicの記事のみ表示
+    # ページネーションをつけたいデータに.page(params[:page])を追加
+    @articles = Article.where("status = 0").page(params[:page]).per(10)
+    
+
   end
 
   # GET /articles/1

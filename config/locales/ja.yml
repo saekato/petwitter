@@ -22,3 +22,11 @@ ja:
       submit: 保存する
       update: 更新する
       search: 検索する
+  #ﾍﾟｰｼﾞﾈｰｼｮﾝにｱｲｺﾝを用いる
+  views:
+     pagination:
+       first: <i class="fas fa-angle-double-left"></i>
+       last: <i class="fas fa-angle-double-right"></i>
+       previous: <i class="fas fa-angle-left"></i>
+       next: <i class="fas fa-angle-right"></i>
+       truncate: "..."    
