@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   # get 'users/:id/profile', to: 'users#show', as: 'user_profile'
   # トップページのルーティング
   root to: 'home#index'
+  
+  #自分の投稿一覧のﾙｰﾃｨﾝｸﾞ
+  get 'mypage/index' => 'mypage#index'
 end
 
   
