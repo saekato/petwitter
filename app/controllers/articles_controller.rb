@@ -6,7 +6,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles
   def index
-    @articles = Article.all
+    @articles = Article.where("status = 0")
   end
 
   # GET /articles/1
