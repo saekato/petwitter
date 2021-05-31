@@ -1,5 +1,10 @@
 ja:
   activerecord:
+    attributes:
+        article:
+          statuses:
+            public: "公開"
+            private: "非公開"
     errors:
       models:
         article:

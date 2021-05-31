@@ -17,6 +17,15 @@
     <%= form.text_field :title, class:"form-control" %>
   </div>
 
+<%= form.label(:public, for: nil, class:'article-status__label') do %>
+      <%= form.radio_button :status, :public %>
+      <%= I18n.t('activerecord.attributes.article.statuses.public') %>
+  <% end %>
+  <%= form.label(:private, for: nil, class:'article-status__label') do %>
+      <%= form.radio_button :status, :private %>
+      <%= I18n.t('activerecord.attributes.article.statuses.private') %>
+  <% end %>
+  
   <div class="actions">
     <%= form.submit class: "btn btn-primary" %>
   </div>

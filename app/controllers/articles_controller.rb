@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
+  #ログインしてなかったらはじく
   before_action :authenticate_user!
+  
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   # GET /articles
@@ -9,6 +11,12 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   def show
+    #非公開記事をログインユーザー以外がアクセスした場合の処理
+    if @article.status_private? && @article.user != current_user
+      respond_to do |format|
+      format.html { redirect_to articles_path, notice: 'このページにはアクセスできません' }
+      end
+    end
   end
 
   # GET /articles/new
@@ -22,17 +30,21 @@ class ArticlesController < ApplicationController
 
   # POST /articles
   def create
-    @article = Article.new(article_params)
-
+    #ユーザーとの関係性を指定する
+    @article = current_user.articles.new(article_params)
+    
     if @article.save
       redirect_to @article, notice: 'Article was successfully created.'
     else
+      format.html { render :new }
+      format.json { render json: @article.errors, status: :unprocessable_entity }
       render :new
     end
   end
 
   # PATCH/PUT /articles/1
   def update
+    #set_article参照
     if @article.update(article_params)
       redirect_to @article, notice: 'Article was successfully updated.'
     else
@@ -42,6 +54,7 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1
   def destroy
+    #set_article参照
     @article.destroy
     redirect_to articles_url, notice: 'Article was successfully destroyed.'
   end
@@ -49,11 +62,18 @@ class ArticlesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article
-      @article = Article.find(params[:id])
+      #自分の記事
+      @article = current_user.articles.find_by(id: params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def article_params
-      params.require(:article).permit(:title)
+      #：user_idを追加
+      #permit→保存したいカラムを指示
+      params.require(:article).permit(
+        :title, 
+        :user_id, 
+        :status, {:cat_ids => []}
+        )
     end
 end

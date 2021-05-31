@@ -13,10 +13,12 @@
 ActiveRecord::Schema.define(version: 2021_05_28_080805) do
 
   create_table "articles", force: :cascade do |t|
+    t.integer "user_id"
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "status", default: 0, null: false
+    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
