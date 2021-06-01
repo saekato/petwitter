@@ -1,6 +1,8 @@
 <h1>Articles</h1>
 <%= link_to 'New Article', new_article_path %>
 <!--render partial: 'articles/article.html.erb', locals: { article: @articles }のこと-->
+<!--postsフォルダのパーシャル _article.html.erb を呼び出してね-->
+<!--その画面のローカル変数 articleには インスタンス変数(オブジェクト)の @articlesを渡してね-->
 <%= render @articles %>
 
 

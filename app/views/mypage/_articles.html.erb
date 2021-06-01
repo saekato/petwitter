@@ -1,0 +1,10 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title"><%= article.title %></h5>
+    <!--ログインしたユーザーIDと投稿したユーザーIDが同じなら-->
+    <% if user_signed_in? && current_user.id == article.user_id %>
+    <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-primary" %>
+    <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
+    <% end %> 
+  </div>
+</div>

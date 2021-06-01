@@ -1,0 +1,7 @@
+<h1>自分の投稿一覧</h1>
+<%= link_to 'New Article', new_article_path %>
+<!--render partial: 'articles/article.html.erb', locals: { article: @articles }のこと-->
+<%= render @articles %>
+
+
+<%= paginate @articles %>
