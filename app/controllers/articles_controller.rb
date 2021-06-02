@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   def index
     # publicの記事のみ表示
     # ページネーションをつけたいデータに.page(params[:page])を追加
-    @articles = Article.where("status = 0").page(params[:page]).per(10)
+    @articles = Article.where("status = 0").page(params[:page]).per(15).order(created_at: :desc)
     
 
   end
