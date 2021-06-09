@@ -1,12 +1,17 @@
 <div class="card mb-3">
   <div class="card-body">
     <h5 class="card-title"><%= article.title %></h5>
+    <!--lメソッドを使って日時表示の設定+formatｵﾌﾟｼｮﾝの指定-->
     <%= l article.created_at, format: :short %>
-
+    
     <!--ログインしたユーザーIDと投稿したユーザーIDが同じなら-->
     <% if user_signed_in? && current_user.id == article.user_id %>
+    <%= link_to article.user.name,users_myprofile_path %>
     <%= link_to 'Edit', edit_article_path(article), class: "btn btn-outline-primary" %>
     <%= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
+    <% else %>
+    <!--投稿者の表示 -->
+    <%= link_to article.user.name,users_show_path %>
     <% end %> 
   </div>
 </div>

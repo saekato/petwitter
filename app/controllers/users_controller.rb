@@ -8,10 +8,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = current_user
+    @user = User.find(params[:id])
   end
   
   def logged_in_user
+  end
+  
+  def myprofile
+    @user = current_user
   end
   
   private
@@ -19,4 +23,6 @@ class UsersController < ApplicationController
   def user_search_params
     params.fetch(:search, {}).permit(:name, :gender)
   end
+  
+  
 end
