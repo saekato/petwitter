@@ -1,19 +1,21 @@
 Rails.application.routes.draw do
-  resources :articles
-  get 'users/show' =>'users#show'
-  get 'users', to: 'users#index'
-    devise_for :users, controllers: {
+  
+  devise_for :users, controllers: {
     sessions: "users/sessions",
     registrations: "users/registrations"
   }
   
+  resources :articles
+  # get 'users/:id/profile', to: 'users#show', as: 'user_profile'
+  # トップページのルーティング/ここからﾛｸﾞｲﾝOR新規ｱｶｳﾝﾄの作成
+  root to: 'home#index'
+  
+  get 'users/:id' =>'users#show'
+  get 'users', to: 'users#index'
+    
+  
   #myprofileのﾙｰﾃｨﾝｸﾞ
   get 'users/myprofile' => 'users#myprofile'
-  
-  # マイページのルーティング
-  # get 'users/:id/profile', to: 'users#show', as: 'user_profile'
-  # トップページのルーティング
-  root to: 'home#index'
   
   
   

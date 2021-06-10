@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  #ﾛｸﾞｲﾝしてない場合はﾛｸﾞｲﾝﾍﾟｰｼﾞへﾘﾀﾞｲﾚｸﾄ
   before_action :authenticate_user!
   before_action :logged_in_user, only: [:index, :edit, :update]
   

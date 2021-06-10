@@ -32,8 +32,8 @@
 <ul class="users">
   <% @users.each do |user| %>
     <li>
-      <%= link_to user.name,users_show_path %>
-      (<%= user.gender %>)
+      <%= link_to (user.name, "users/#{user.id}" %>
+      <%= user.gender %>
     </li>
   <% end %>
 </ul>
