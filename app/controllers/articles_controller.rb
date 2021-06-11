@@ -62,7 +62,14 @@ class ArticlesController < ApplicationController
     @article.destroy
     redirect_to articles_url, notice: 'Article was successfully destroyed.'
   end
-
+  
+  def otherIndex
+    # publicの記事のみ表示
+    # ページネーションをつけたいデータに.page(params[:page])を追加
+    @articles = Article.where(user_id: params[:id]).page(params[:page]).per(15).order(created_at: :desc)
+    
+  end
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_article

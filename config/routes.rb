@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   
   #自分の投稿一覧のﾙｰﾃｨﾝｸﾞ
   get 'mypage/index' => 'mypage#index'
+  get 'users/articles/:id' => 'articles#otherIndex'
 end
 
   
