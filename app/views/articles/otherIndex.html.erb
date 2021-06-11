@@ -1,8 +1,15 @@
-<h1>さんの投稿一覧</h1>
+<h1>さんの投稿一覧へ</h1>
+<div class="card mb-3">
+  <div class="card-body">
+ 
+<h5 class="card-title"><% @articles.each do |article| %>
+    <%= article.title %></h5>
+    <% end %>
+    
 
-<% @articles.each do |article| %>
-  <%= article.title %>
-  
-<% end %>
+    </div>
+</div>
+
+ 
 
 <%= paginate @articles %>
