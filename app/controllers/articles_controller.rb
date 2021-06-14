@@ -67,7 +67,7 @@ class ArticlesController < ApplicationController
     # publicの記事のみ表示
     # ページネーションをつけたいデータに.page(params[:page])を追加
     @articles = Article.where(user_id: params[:id]).where("status = 0").page(params[:page]).per(15).order(created_at: :desc)
-    
+    @user = User.find(params[:id])
   end
   
   private

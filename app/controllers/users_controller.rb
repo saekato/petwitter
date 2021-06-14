@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   
   def index
     @search_params = user_search_params
-    @users = User.search(@search_params)
+    @users = User.search(@search_params).where.not(id: current_user.id)
   end
 
   def show
