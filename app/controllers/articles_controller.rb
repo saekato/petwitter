@@ -84,6 +84,7 @@ class ArticlesController < ApplicationController
       params.require(:article).permit(
         :title, 
         :user_id, 
+        :image,
         :status, {:cat_ids => []}
         )
     end

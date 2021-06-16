@@ -76,6 +76,8 @@ gem 'faker', '2.18.0'
 gem 'will_paginate',           '3.3.0'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'kaminari'
+gem 'carrierwave'
+gem 'rmagick'
 
 group :development do
   gem 'better_errors'

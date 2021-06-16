@@ -4,6 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          
+         
   has_many :articles       
          
   validates :name, presence: true
@@ -17,4 +18,7 @@ class User < ApplicationRecord
   end
   scope :name_like, -> (name) { where('name LIKE ?', "%#{name}%") if name.present? }
   scope :gender_is, -> (gender) { where(gender: gender) if gender.present? }
+  
+  #カラムの名前をmount_uploaderに指定
+  mount_uploader :image, ImageUploader
 end
