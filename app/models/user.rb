@@ -19,6 +19,5 @@ class User < ApplicationRecord
   scope :name_like, -> (name) { where('name LIKE ?', "%#{name}%") if name.present? }
   scope :gender_is, -> (gender) { where(gender: gender) if gender.present? }
   
-  #カラムの名前をmount_uploaderに指定
-  mount_uploader :image, ImageUploader
+  
 end

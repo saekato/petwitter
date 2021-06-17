@@ -20,9 +20,17 @@
   </div>
   <!-- 画像のｱｯﾌﾟﾛｰﾄﾞ-->
   <%= form_for @article do |f| %>
-      <%= f.label :image 'iamge' %>
-      <%= f.file_field :image %>
+    <% if @article.image? %>
+      <%= image_tag @article.image.url %>
     <% end %>
+    
+    <%= form.file_field :image %>
+
+    <% end %>
+ <!--画像の表示はviewにimage_tag user.image.to_sで表示させる >
+ <!--ここがよくわからない-->
+  
+ 
 <%= form.label(:public, for: nil, class:'article-status__label') do %>
       <%= form.radio_button :status, :public %>
       <%= I18n.t('activerecord.attributes.article.statuses.public') %>

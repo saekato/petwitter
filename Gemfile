@@ -78,6 +78,8 @@ gem 'bootstrap-will_paginate', '1.0.0'
 gem 'kaminari'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'fog-aws'
+gem 'dotenv-rails'
 
 group :development do
   gem 'better_errors'
