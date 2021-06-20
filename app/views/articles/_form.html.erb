@@ -19,14 +19,14 @@
     <%= form.text_field :title, class:"form-control" %>
   </div>
   <!-- 画像のｱｯﾌﾟﾛｰﾄﾞ-->
-  <%= form_for @article do |f| %>
+ 
     <% if @article.image? %>
       <%= image_tag @article.image.url %>
     <% end %>
     
     <%= form.file_field :image %>
 
-    <% end %>
+    
  <!--画像の表示はviewにimage_tag user.image.to_sで表示させる >
  <!--ここがよくわからない-->
   
