@@ -12,7 +12,9 @@ Rails.application.configure do
   # Show full error reports.
   config.consider_all_requests_local = true
   
- 
+  #Cannot render console from <IPアドレス>!の対処法
+  config.web_console.whitelisted_ips = '111.239.160.202' #追記
+  config.web_console.whitelisted_ips = '210.203.244.14'
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?

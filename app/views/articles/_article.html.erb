@@ -4,6 +4,7 @@
     <!--lメソッドを使って日時表示の設定+formatｵﾌﾟｼｮﾝの指定-->
     <%= l article.created_at, format: :short %>
     
+    
     <!--ログインしたユーザーIDと投稿したユーザーIDが同じなら-->
     <% if user_signed_in? && current_user.id == article.user_id %>
       <%= link_to article.user.name,users_myprofile_path %>
