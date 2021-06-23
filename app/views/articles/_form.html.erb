@@ -3,35 +3,28 @@
   <% if article.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(article.errors.count, "error") %> prohibited this article from being saved:</h2>
-
-      <ul>
-      <% article.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
     </div>
   <% end %>
   
-  
-<!--値入力と送信ﾎﾞﾀﾝの部分-->
+  <!--値入力と送信ﾎﾞﾀﾝの部分-->
   <div class="field form-group">
     <%= form.label :title %>
     <%= form.text_field :title, class:"form-control" %>
   </div>
   <!-- 画像のｱｯﾌﾟﾛｰﾄﾞ-->
- 
-    <% if @article.image? %>
+   <% if @article.image? %>
       <%= image_tag @article.image.url %>
-    <% end %>
+   <% end %>
     
     <%= form.file_field :image %>
 
     
- <!--画像の表示はviewにimage_tag user.image.to_sで表示させる >
- <!--ここがよくわからない-->
-  
- 
-<%= form.label(:public, for: nil, class:'article-status__label') do %>
+ <%= form.label(:public, for: nil, class:'article-status__label') do %>
       <%= form.radio_button :status, :public %>
       <%= I18n.t('activerecord.attributes.article.statuses.public') %>
   <% end %>

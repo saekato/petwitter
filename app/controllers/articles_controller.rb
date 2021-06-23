@@ -10,7 +10,11 @@ class ArticlesController < ApplicationController
     # ページネーションをつけたいデータに.page(params[:page])を追加
     @articles = Article.where("status = 0").page(params[:page]).per(15).order(created_at: :desc)
     
-
+    @article = Article.find_by(id: params[:id])
+      if params[:image]
+        @article.image_name = "#{@article.id}.jpg"
+        image = params[:image]
+      end
   end
 
   # GET /articles/1
