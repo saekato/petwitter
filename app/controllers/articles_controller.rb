@@ -9,12 +9,8 @@ class ArticlesController < ApplicationController
     # publicの記事のみ表示
     # ページネーションをつけたいデータに.page(params[:page])を追加
     @articles = Article.where("status = 0").page(params[:page]).per(15).order(created_at: :desc)
-    
-    @article = Article.find_by(id: params[:id])
-      if params[:image]
-        @article.image_name = "#{@article.id}.jpg"
-        image = params[:image]
-      end
+
+    @article = Article.all
   end
 
   # GET /articles/1
@@ -30,7 +26,7 @@ class ArticlesController < ApplicationController
   # GET /articles/new
   def new
     @article = Article.new
-    @articles = Article.all
+    
   end
 
   # GET /articles/1/edit
