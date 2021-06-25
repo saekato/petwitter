@@ -40,6 +40,12 @@
     <%= f.label :animal_type, "Pet type 例:いぬ、ねこ※ひらがなで入力してね" %><br />
     <%= f.text_field :animal_type, autofocus: true%>
   </div>
+  
+  <div class="field">
+  <%= f.label :icon %><br/>
+  <img src=<%= @user.icon %> class = "icon_image">
+  <%= f.file_field :icon %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>

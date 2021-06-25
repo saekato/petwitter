@@ -2,3 +2,10 @@ input[type="submit"][value="Cancel my account"] {
   @extend .btn !optional;
   @extend .btn-danger !optional;
 }
+
+.circle-icon img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
