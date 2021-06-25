@@ -19,5 +19,6 @@ class User < ApplicationRecord
   scope :name_like, -> (name) { where('name LIKE ?', "%#{name}%") if name.present? }
   scope :gender_is, -> (gender) { where(gender: gender) if gender.present? }
   
+  mount_uploader :icon, ImageUploader
   
 end

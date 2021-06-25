@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   
   #permitに:imageを追加
   def user_search_params
-    params.fetch(:search, {}).permit(:name, :gender, :image)
+    params.fetch(:search, {}).permit(:name, :gender, :icon)
   end
   
   def update
