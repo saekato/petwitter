@@ -15,9 +15,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+   super
+   @user = current_user
+ 
+    edit_user_registration_path
+  end
 
   # PUT /resource
   # def update
