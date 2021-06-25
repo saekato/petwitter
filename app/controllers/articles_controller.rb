@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
     # ページネーションをつけたいデータに.page(params[:page])を追加
     @articles = Article.where("status = 0").page(params[:page]).per(15).order(created_at: :desc)
 
-    @article = Article.all
+    @article = Article.find(17)
   end
 
   # GET /articles/1
