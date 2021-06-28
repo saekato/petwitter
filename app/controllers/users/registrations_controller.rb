@@ -5,10 +5,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-   def new
-     super
-     @user = current_user
-   end
+  #def new
+  # super
+  #end
 
   # POST /resource
   # def create
@@ -69,6 +68,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
   
+  #パスワード確認作業の省略
   def update_resource(resource, params)
     resource.update_without_password(params)
   end

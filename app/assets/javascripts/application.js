@@ -13,9 +13,13 @@
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
-//= require_tree .
+
 
 // Bootstrap4
 //= require jquery3
+//= require jquery_ujs
+//= require_tree .
 //= require popper
 //= require bootstrap-sprockets  
+
+console.log('hoge')　# 追加

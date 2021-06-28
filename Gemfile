@@ -64,9 +64,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Bootstrap4 and jQuery
+# Bootstrap4y
 gem 'bootstrap', '~> 4.3.1'
-gem 'jquery-rails'
+
 
 # devise
 gem 'devise', '~> 4.2'
@@ -77,7 +77,7 @@ gem 'will_paginate',           '3.3.0'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem 'kaminari'
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick' #画像処理に必要
 gem 'fog-aws'
 gem 'dotenv-rails'
 
@@ -85,3 +85,5 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
 end
+#jQuer
+gem 'jquery-rails'

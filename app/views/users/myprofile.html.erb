@@ -1,5 +1,14 @@
 <h1>about me</h1>
 
+<div class="circle-icon">
+<!--ﾌﾟﾛﾌｨｰﾙ画像の表示-->
+<% if @user.icon? %>
+  <%= image_tag @user.icon.url %>
+<% else %>
+  <%= image_tag "default.jpg" %>
+<% end %>
+</div>
+
 <h3>ユーザー名</h3>
 <%= @user.name %>
 <h3>メールアドレス</h3>
@@ -10,6 +19,7 @@
 <%= @user.gender %>
 <h3>animal_type</h3>
 <%= @user.animal_type %>
+
 
 <%= link_to '自分の登録一覧へ', mypage_index_path %>
 <%= link_to 'プロフィール編集', edit_user_registration_path %>

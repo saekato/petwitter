@@ -1,6 +1,15 @@
 <!--ログインしたユーザーIDと投稿したユーザーIDが同じなら-->
  <h1>about user</h1>
 
+<div class="circle-icon">
+<!--ﾌﾟﾛﾌｨｰﾙ画像の表示-->
+<% if @user.icon? %>
+  <%= image_tag @user.icon.url %>
+<% else %>
+  <%= image_tag "default.jpg" %>
+<% end %>
+</div>
+
 <h3>ユーザー名</h3>
 <%= @user.name %>
 <h3>age</h3>
@@ -10,10 +19,5 @@
 <h3>animal_type</h3>
 <%= @user.animal_type %>
 
-<!--ﾌﾟﾛﾌｨｰﾙ画像の表示-->
-<% if @user.icon? %>
-  <%= image_tag @user.image.url %>
-<% else %>
-  <%= image_tag "default.jpg" %>
-<% end %>
+
 <%= link_to @user.name + "さんの投稿一覧へ", "/users/articles/#{@user.id}" %>

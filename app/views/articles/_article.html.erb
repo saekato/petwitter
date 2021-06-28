@@ -3,9 +3,9 @@
     <h5 class="card-title"><%= article.title %></h5>
     <!--lメソッドを使って日時表示の設定+formatｵﾌﾟｼｮﾝの指定-->
     <%= l article.created_at, format: :short %>
-    <!--　画像表示？ -->  
-      <% if @article.image? %>
-        <%= image_tag @article.image.url %>
+    <!--　画像表示 -->  
+      <% if article.image? %>
+        <%= image_tag article.image.url %>
       <% end %>
       
     <!--ログインしたユーザーIDと投稿したユーザーIDが同じなら-->

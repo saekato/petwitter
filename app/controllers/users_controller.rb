@@ -22,27 +22,9 @@ class UsersController < ApplicationController
   
   #permitに:imageを追加
   def user_search_params
-    params.fetch(:search, {}).permit(:name, :gender, :icon)
+    params.fetch(:search, {}).permit(:name, :gender)
   end
   
-  def update
-    @user = User.find(params[:id])
- 
-  #編集しようとしてるユーザーがログインユーザーとイコールかをチェック
-      if current_user == @user
- 
-        if @user.update(user_params)
-          flash[:success] = 'ユーザー情報を編集しました。'
-          render :edit
-        else
-          flash.now[:danger] = 'ユーザー情報の編集に失敗しました。'
-          render :edit
-        end   
-   
-      else
-        redirect_to root_url
-      end
-      
-  end
+
   
 end
