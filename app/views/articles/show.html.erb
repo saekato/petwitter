@@ -12,6 +12,18 @@
         <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-primary" %>
         <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
       <% end %> 
+      
+<!--いいね処理-->      
+      <h3>いいね件数: <%= @artcile.likes.count %></h3>
+      <% if current_user.already_liked?(@article) %>
+        <%= button_to 'いいねを取り消す', article_like_path(@article), method: :delete %>
+      <% else %>
+        <%= button_to 'いいね', article_likes_path(@article) %>
+      <% end %>
+      <h2>いいねしたユーザー</h2>
+        <% @article.liked_users.each do |user| %>
+      <% end %>
+<!--ここまで-->
   </div>
 </div>
 

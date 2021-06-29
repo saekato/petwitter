@@ -8,6 +8,11 @@ class User < ApplicationRecord
   has_many :articles
   has_many :likes, dependent: :destroy
   has_many :liked_articles, through: :likes, source: :article
+  
+  #ユーザーが投稿に対して、すでにいいねをしているのかどうかを判定
+  def already_liked?(article)
+    self.likes.exists?(article_id: article.id)
+  end
          
   validates :name, presence: true
   enum gender: { ♂: 0, ♀: 1, other: 2}

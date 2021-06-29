@@ -22,6 +22,7 @@ class ArticlesController < ApplicationController
         format.html { redirect_to articles_path, notice: "このページにはアクセスできません" }
     end
     end
+    @like = Like.new
   end
 
   # GET /articles/new
