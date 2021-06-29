@@ -19,8 +19,8 @@ class ArticlesController < ApplicationController
     #非公開記事をログインユーザー以外がアクセスした場合の処理
     if @article.status_private? && @article.user != current_user
       respond_to do |format|
-        format.html { redirect_to articles_path, notice: 'このページにはアクセスできません' }
-      end
+        format.html { redirect_to articles_path, notice: "このページにはアクセスできません" }
+    end
     end
   end
 
