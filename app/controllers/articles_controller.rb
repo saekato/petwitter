@@ -15,13 +15,13 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   def show
-    @article = Article.find_by(id:params[:id])
+    #@article = Article.find_by(id:params[:id])
     #非公開記事をログインユーザー以外がアクセスした場合の処理
-   #if @article.status_private? && @article.user != current_user
-      #respond_to do |format|
-      #format.html { redirect_to articles_path, notice: 'このページにはアクセスできません' }
-      #end
-    #end
+    if @article.status_private? && @article.user != current_user
+      respond_to do |format|
+        format.html { redirect_to articles_path, notice: 'このページにはアクセスできません' }
+      end
+    end
   end
 
   # GET /articles/new
@@ -40,12 +40,17 @@ class ArticlesController < ApplicationController
     #ユーザーとの関係性を指定する
     @article = current_user.articles.new(article_params)
     
-    if @article.save
-      redirect_to @article, notice: 'Article was successfully created.'
-    else
-      format.html { render :new }
-      format.json { render json: @article.errors, status: :unprocessable_entity }
-      render :new
+    respond_to do |format|
+      if @article.save
+        # リクエストされるフォーマットがHTML形式の場合
+        format.html { redirect_to @article, notice: '新規投稿を行いました。' }
+        # リクエストされるフォーマットがJSON形式の場合
+        format.json { render :show, status: :created, location: @article }
+      else
+        format.html { render :new }
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+        render :new
+      end
     end
   end
 
@@ -77,7 +82,7 @@ class ArticlesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_article
       #自分の記事
-      @article = current_user.articles.find_by(id: params[:id])
+      @article = Article.find_by(id: params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
@@ -88,7 +93,8 @@ class ArticlesController < ApplicationController
         :title, 
         :user_id, 
         :image,
-        :status, {:cat_ids => []}
+        :status,
+        {:cat_ids => []}
         )
     end
 end
