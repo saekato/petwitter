@@ -23,15 +23,16 @@
     
     <%= form.file_field :image %>
 
-    
- <%= form.label(:public, for: nil, class:'article-status__label') do %>
+   <!--公開の選択--> 
+   <%= form.label(:public, for: nil, class:'article-status__label') do %>
       <%= form.radio_button :status, :public %>
       <%= I18n.t('activerecord.attributes.article.statuses.public') %>
-  <% end %>
-  <%= form.label(:private, for: nil, class:'article-status__label') do %>
+   <% end %>
+   <!--非公開の選択--> 
+   <%= form.label(:private, for: nil, class:'article-status__label') do %>
       <%= form.radio_button :status, :private %>
       <%= I18n.t('activerecord.attributes.article.statuses.private') %>
-  <% end %>
+   <% end %>
   
   <div class="actions">
     <%= form.submit class: "btn btn-primary" %>

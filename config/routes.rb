@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   #自分の投稿一覧のﾙｰﾃｨﾝｸﾞ
   get 'mypage/index' => 'mypage#index'
   get 'users/articles/:id' => 'articles#otherIndex'
-  get 'articles/show' => 'article#show'
+  #articles/〇〇すべてを読み込むので注意が必要。下に位置させる
+  get 'articles/:id' => 'article#show'
 end
 
   

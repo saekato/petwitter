@@ -1,7 +1,18 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <h5 class="card-title"><%= @article.title %></h5>
+    <!--lメソッドを使って日時表示の設定+formatｵﾌﾟｼｮﾝの指定-->
+    <%= l @article.created_at, format: :short %>
+    <!--　画像表示 -->  
+      <% if @article.image? %>
+        <%= image_tag @article.image.url %>
+      <% end %>
+    
+      <% if user_signed_in? && current_user.id == @article.user_id %>
+        <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-primary" %>
+        <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
+      <% end %> 
+  </div>
+</div>
 
-
-<!--_article.html.erbへ記載したﾊﾟｰｼｬﾙを呼び出す-->
-<%= render @article %>
-
-<%= link_to 'Edit', edit_article_path(@article) %>|
 <%= link_to 'Back', articles_path %>
