@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
          
-  has_many :articles       
+  has_many :articles
+  has_many :likes, dependent: :destroy
+  has_many :liked_articles, through: :likes, source: :article
          
   validates :name, presence: true
   enum gender: { ♂: 0, ♀: 1, other: 2}
