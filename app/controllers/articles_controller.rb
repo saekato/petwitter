@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1
   def show
+    @like = Like.new
     #@article = Article.find_by(id:params[:id])
     #非公開記事をログインユーザー以外がアクセスした場合の処理
     if @article.status_private? && @article.user != current_user
@@ -22,7 +23,7 @@ class ArticlesController < ApplicationController
         format.html { redirect_to articles_path, notice: "このページにはアクセスできません" }
     end
     end
-    @like = Like.new
+    
   end
 
   # GET /articles/new

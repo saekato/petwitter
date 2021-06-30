@@ -7,6 +7,7 @@
       <% if article.image? %>
         <%= image_tag article.image.url %>
       <% end %>
+      (<%= article.liked_users.count %>)
       <%= link_to 'Show', article, class: "btn btn-outline-primary" %>
       
     <!--ログインしたユーザーIDと投稿したユーザーIDが同じなら-->
