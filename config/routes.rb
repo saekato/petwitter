@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   
   resources :articles
   resources :likes, only: [:create, :destroy]
+  post "likes/:article_id/create" => "likes#create"
+  post "likes/:article_id/destroy" => "likes#destroy"
   # get 'users/:id/profile', to: 'users#show', as: 'user_profile'
   # トップページのルーティング/ここからﾛｸﾞｲﾝOR新規ｱｶｳﾝﾄの作成
   root to: 'home#index'
