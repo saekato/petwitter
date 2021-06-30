@@ -13,12 +13,16 @@
         <%= link_to 'Destroy', @article, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %>
       <% end %> 
       
-<!--いいね処理-->      
-      <% if Like.find_by(user_id: current_user.id, article_id: @article.id) %>
- 　      <%= link_to("いいね","/likes/#{@article.id}/destroy", {method: "article"}) %>
-      <% else %>
-        <%= link_to("いいねを取り消す","/likes/#{@article.id}/create", {method: "article"}) %>
-      <% end %>
+<!--いいね処理-->
+      <% if Like.find_by(user_id: current_user.id, post_id: @post.id) %>
+　<%= link_to("/likes/#{@post.id}/destroy", {method: "post"}) do %>
+    　<span class="fa fa-heart like-btn-unlike"></span>
+ <% else %>
+ 　<%= link_to("/likes/#{@post.id}/create", {method: "post"}) do %>
+       <span class="fa fa-heart like-btn"></span>
+     <% end %>
+  
+     
 <!--ここまで-->
   </div>
 </div>
