@@ -18,11 +18,5 @@
 <%= @user.gender %>
 <h3>animal_type</h3>
 <%= @user.animal_type %>
-<!--ユーザーの詳細ページでそのユーザーが誰に対していいねしているのかどうかを表示-->
-<h3>いいねしている投稿</h3>
 
-<% @user.liked_articles.each do |article| %>
-  <%= article.title %>
-<% end %>
-<!--ここまで-->
 <%= link_to @user.name + "さんの投稿一覧へ", "/users/articles/#{@user.id}" %>

@@ -7,7 +7,22 @@
       <% if article.image? %>
         <%= image_tag article.image.url %>
       <% end %>
-      (<%= article.liked_users.count %>)
+      
+      <!--いいね処理-->
+     
+      <% if Like.find_by(user_id: current_user.id, article_id: article.id) %>
+ 　      <%= link_to("/likes/#{article.id}/destroy", {method: "article"}) do %>
+ 　         <span class="fa fa-heart like-btn-unlike"></span>
+ 　      <% end %>
+      <% else %>
+        <%= link_to("/likes/#{article.id}/create", {method: "article"}) do %>
+           <span class="fa fa-heart like-btn"></span>
+        <% end %>
+      <% end %>
+      
+      <!-- 変数@likes_countを表示してください -->
+      <%= @likes_count %>
+      <!--ここまで-->
       <%= link_to 'Show', article, class: "btn btn-outline-primary" %>
       
     <!--ログインしたユーザーIDと投稿したユーザーIDが同じなら-->

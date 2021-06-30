@@ -2,20 +2,19 @@ class ArticlesController < ApplicationController
   #ログインしてなかったらはじく
   before_action :authenticate_user!
   
-  before_action :set_article, only: [:show, :edit, :update, :destroy]
+  before_action :set_article, only: [:show, :edit, :update, :destroy, :index]
 
   # GET /articles
   def index
     # publicの記事のみ表示
     # ページネーションをつけたいデータに.page(params[:page])を追加
     @articles = Article.where("status = 0").page(params[:page]).per(15).order(created_at: :desc)
-
+    @likes_count = Like.where(article_id: @article.id).count
    
   end
 
   # GET /articles/1
   def show
-    @like = Like.new
     #@article = Article.find_by(id:params[:id])
     #非公開記事をログインユーザー以外がアクセスした場合の処理
     if @article.status_private? && @article.user != current_user
@@ -23,7 +22,8 @@ class ArticlesController < ApplicationController
         format.html { redirect_to articles_path, notice: "このページにはアクセスできません" }
     end
     end
-    
+    # 変数@likes_countを定義
+    @likes_count = Like.where(article_id: @article.id).count
   end
 
   # GET /articles/new
