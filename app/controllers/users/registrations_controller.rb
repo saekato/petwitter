@@ -26,10 +26,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def update
   #   super
   # end
-  def destroy
-    @user.remove_icon!
-    @user.save
-  end
+  
   # DELETE /resource
   # def destroy
   #   super

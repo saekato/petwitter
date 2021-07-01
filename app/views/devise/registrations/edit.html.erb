@@ -4,14 +4,17 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   
   <div class="circle-icon">
+    <%= f.file_field :icon, id: :user_icon %>
     <% if current_user.persisted? && current_user.icon? %>
       <%= image_tag current_user.icon.to_s %>
       <label><%= f.check_box :remove_icon %>画像を削除</label>
+    <% elsif @user.icon.present? %>
+      <%= image_tag @user.icon, id: :icon_prev %>
     <% else %>
-      <%= image_tag 'default.jpg' %>
+      <%= image_tag 'default.jpg', id: :icon_prev %>
       <%= f.hidden_field :icon_cache %>
     <% end %>
-      <%= f.file_field :icon %>
+
   </div>
   
   <div class="field">
