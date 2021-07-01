@@ -26,7 +26,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def update
   #   super
   # end
-
+  def destroy
+    @user.remove_icon!
+    @user.save
+  end
   # DELETE /resource
   # def destroy
   #   super
@@ -42,7 +45,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
    protected
-   #users_controllerへの記述かも？
   
   def after_update_path_for(resource)
     users_myprofile_path

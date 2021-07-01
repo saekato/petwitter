@@ -18,6 +18,11 @@ class UsersController < ApplicationController
     @user = current_user
   end
   
+  def destroy
+    @user.remove_icon!
+    @user.save
+  end
+  
   private
   
   #permitに:imageを追加
