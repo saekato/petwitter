@@ -41,6 +41,11 @@ class ArticlesController < ApplicationController
   def create
     #ユーザーとの関係性を指定する
     @article = current_user.articles.new(article_params)
+    if params[:img] != nil
+       img = MiniMagick::Image.read(params[:img])
+       img.resize_to_fill "128x128"
+       img.write "public/images/hoge.jpg"
+    end
     
     respond_to do |format|
       if @article.save
