@@ -42,9 +42,14 @@
   </div>
   
   <div class="field">
-  <%= f.label :icon %><br/>
-  <img src=<%= @user.icon %> class = "icon_image">
-  <%= f.file_field :icon %>
+    <%= f.label :icon %><br/>
+      <img src=<%= @user.icon %> class = "icon_image">
+    <%= f.file_field :icon, id: :icon_img %>
+    <% if @user.icon.present? %>
+      <%= image_tag @user.icon, id: :icon_prev %>
+    <% else %>
+      <%= image_tag "default.jpg", id: :icon_prev %>
+    <% end %>
   </div>
 
   <div class="actions">

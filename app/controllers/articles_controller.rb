@@ -41,6 +41,8 @@ class ArticlesController < ApplicationController
   def create
     #ユーザーとの関係性を指定する
     @article = current_user.articles.new(article_params)
+    #画像のﾘｻｲｽﾞ
+    #resizeをresize_to_fillへ変更
     if params[:img] != nil
        img = MiniMagick::Image.read(params[:img])
        img.resize_to_fill "128x128"
