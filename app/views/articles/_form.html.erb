@@ -20,9 +20,31 @@
    <% if @article.image? %>
       <%= image_tag @article.image.url %>
    <% end %>
-    
-    <%= form.file_field :image %>
+  <!--ﾌﾟﾚﾋﾞｭｰ実装-->   
+   <%= form.file_field :image, id: :article_img %>
+    <% if @article.image.present? %>
+      <%= image_tag @article.image, id: :img_prev %>
+    <% else %>
+      <%= image_tag "default.jpg", id: :img_prev %>
+    <% end %>
 
+    <script type="text/javascript">
+      $(function() {
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            reader.onload = function (e) {
+      $('#img_prev').attr('src', e.target.result);
+            }
+        reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#article_img").change(function(){
+        readURL(this);
+    });
+  });
+</script>
+ <!--ここまで-->
    <!--公開の選択--> 
    <%= form.label(:public, for: nil, class:'article-status__label') do %>
       <%= form.radio_button :status, :public %>
