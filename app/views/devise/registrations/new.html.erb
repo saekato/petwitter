@@ -41,8 +41,8 @@
     <%= f.text_field :animal_type, autofocus: true%>
   </div>
   
-  <div class="field circle-icon ">
-    <%= f.label :icon %><br/>
+  <div class="field">
+     <%= f.label :icon %><br/>
       <img src=<%= @user.icon %> class = "icon_image">
     <%= f.file_field :icon, id: :icon_img %>
     <% if @user.icon.present? %>
