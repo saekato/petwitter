@@ -43,6 +43,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
    protected
    #users_controllerへの記述かも？
+  
+  def after_update_path_for(resource)
+    users_myprofile_path
+  end
    #avatar_cache：バリデーション時などに画像を保持するため
    #remove_avatar:画像を削除する時のためのﾊﾟﾗﾒｰﾀｰ
   def configure_account_update_params
