@@ -23,7 +23,7 @@
   <!--ﾌﾟﾚﾋﾞｭｰ実装-->   
    <%= form.file_field :image, id: :article_img %>
     <% if @article.image.present? %>
-      <%= image_tag @article.image, id: :img_prev, class:'previeww' %>
+      <%= image_tag @article.image.url, id: :img_prev %>
     <% else %>
       <%= image_tag "default.jpg", id: :img_prev %>
     <% end %>

@@ -75,6 +75,9 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1
   def destroy
+    ##画像の削除
+    @article.remove_image!
+    @article.save
     #set_article参照
     @article.destroy
     redirect_to articles_url, notice: 'Article was successfully destroyed.'
