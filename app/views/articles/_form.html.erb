@@ -19,6 +19,7 @@
   <!-- 画像のｱｯﾌﾟﾛｰﾄﾞ-->
    <% if @article.image? %>
       <%= image_tag @article.image.url %>
+      <label><%= form.check_box :remove_image %>画像を削除</label>
    <% end %>
   <!--ﾌﾟﾚﾋﾞｭｰ実装-->   
    <%= form.file_field :image, id: :article_img %>

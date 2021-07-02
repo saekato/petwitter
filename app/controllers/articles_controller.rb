@@ -106,7 +106,8 @@ class ArticlesController < ApplicationController
         :user_id, 
         :image,
         :status,
-        {:cat_ids => []}
+        {:cat_ids => []},
+        :remove_image
         )
     end
 end
