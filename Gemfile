@@ -80,6 +80,7 @@ gem 'carrierwave'
 gem 'rmagick' #画像処理に必要
 gem 'fog-aws'
 gem 'dotenv-rails'
+gem "aws-sdk-s3", require: false
 
 group :development do
   gem 'better_errors'
